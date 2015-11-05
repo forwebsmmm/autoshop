@@ -1,0 +1,5 @@
+.idea
+.idea/*
+wp-config.php
+.htaccess
+/wp-content/themes/Zenshop/cache/*

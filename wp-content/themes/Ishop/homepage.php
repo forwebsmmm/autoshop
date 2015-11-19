@@ -16,7 +16,8 @@ get_header(); ?>
 				
 					<?php global $post;
 					$count = ft_of_get_option('fabthemes_slide_number');
-					$slidecat =ft_of_get_option('fabthemes_slide_categories');
+//					$slidecat =ft_of_get_option('fabthemes_slide_categories');
+                    $slidecat = '';
 					$args = array( 'post_type'=>'products','numberposts' => $count, 'cat' => $slidecat );
 					$myposts = get_posts( $args );
 					foreach( $myposts as $post ) :	setup_postdata($post); ?>

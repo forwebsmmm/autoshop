@@ -256,3 +256,83 @@ echo $fflink;
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
 
+function register_parser_page(){
+    add_menu_page(
+        'Parser', 'Parser', 'manage_options', 'custompage', 'parser_page', '', 6
+    );
+}
+
+function parser_page(){
+    if(isset($_FILES['xlsfile']['tmp_name'])){
+        global $wpdb;
+        $attachment = $_FILES['xlsfile']['tmp_name'];
+        $typef = $_FILES['xlsfile']['name'];
+        $file_type = substr($typef, strrpos($typef, '.')+1);
+
+        if (in_array($file_type, array('xls', 'xlsx'))) {
+            $res = parse_excel_file( $attachment );
+            $res = array_slice($res, 6, -2);
+            foreach ($res as $value){
+                $number_unq = $value[0];
+                $product_price = $value[13];
+                $product_ostatok = $value[14];
+                $product_price = strtr($product_price, array(','=>''));
+                $product_price = round($product_price);
+                $product_ostatok = round($product_ostatok);
+                $wpdb->update(
+                    'wp_cart66_products',
+                    array( 'price' => $product_price ),
+                    array( 'item_number' => $number_unq)
+                );
+
+                $post_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE product_number = $number_unq");
+                update_post_meta($post_id, '_product_info_product_price', $product_price.'руб.');
+                update_post_meta($post_id, '_product_info_product_ostatok', $product_ostatok);
+
+
+//                $wpdb->insert(
+//                    'wp_cart66_products',
+//                    array( 'name' => $product_name, 'item_number' => $number )
+//                );
+
+//                $my_post = array(
+//                    'post_title' => $product_name,
+//                    'post_content' => '[add_to_cart item="'.$number.'" quantity="user:1" ]',
+//                    'post_status' => 'publish',
+//                    'post_author' => 1,
+//                    'post_type' => 'products'
+//                );
+//                $post_id = wp_insert_post( $my_post );
+//                update_post_meta($post_id, '_thumbnail_id', 39);
+//                update_post_meta($post_id, '_product_info_product_price', '0руб.');
+
+//                $result = $wpdb->update( 'wp_cart66_products', array('nalichie' => '0'), array('name'=>$nalichie) );
+//                if ($result == 1){
+//                    $xlsresult = 1;
+//                }
+            }
+            unlink($attachment);
+//            echo $xlsresult == 1 ? "Изменения внесены" : "Изменений нет, проверьте xls файл или повторите попытку.";
+        } else {
+//            echo "Формат файла не xls и не xlsx";
+        }
+    } ?>
+    <form id="xlsx" action="" method="post" name="xlsx" enctype="multipart/form-data">
+        <input type="file" name="xlsfile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"><br>
+        <input type="submit" value="Отправить">
+    </form>
+<?php }
+add_action( 'admin_menu', 'register_parser_page' );
+?>
+
+<?php
+function parse_excel_file( $filename ){
+    require_once dirname(__FILE__).'/PHPExcel/Classes/PHPExcel.php';
+    $result = array();
+    $file_type = PHPExcel_IOFactory::identify( $filename );
+    $objReader = PHPExcel_IOFactory::createReader( $file_type );
+    $objPHPExcel = $objReader->load( $filename );
+    $result = $objPHPExcel->getActiveSheet()->toArray();
+    return $result;
+}
+?>

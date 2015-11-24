@@ -11,7 +11,7 @@
 
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
-		<h1 class="entry-title"><?php _e( 'Nothing Found', 'fabthemes' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Ничего не найдено', 'fabthemes' ); ?></h1>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -21,7 +21,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'fabthemes' ); ?></p>
+			<p><?php _e( 'Извините, но ничего не соответствует условию поиска. Пожалуйста, попытайтесь снова с другими ключевыми словами.', 'fabthemes' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>

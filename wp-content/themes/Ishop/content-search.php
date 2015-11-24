@@ -46,6 +46,6 @@
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'fabthemes' ), __( '1 Comment', 'fabthemes' ), __( '% Comments', 'fabthemes' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'fabthemes' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Изменить', 'fabthemes' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

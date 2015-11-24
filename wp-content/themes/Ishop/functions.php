@@ -314,7 +314,7 @@ function parser_page(){
             unlink($attachment);
 //            echo $xlsresult == 1 ? "Изменения внесены" : "Изменений нет, проверьте xls файл или повторите попытку.";
         } else {
-//            echo "Формат файла не xls и не xlsx";
+            echo "Формат файла не xls и не xlsx";
         }
     } ?>
     <form id="xlsx" action="" method="post" name="xlsx" enctype="multipart/form-data">

@@ -89,7 +89,7 @@ get_header(); ?>
 						$img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
 						$image = aq_resize( $img_url, 180, 200, false ); //resize & crop the image
 					?>
-					<?php if($image) : ?> <a href="<?php the_permalink(); ?>"><img src="<?php echo $image ?>"/></a> <?php endif; ?>
+					<?php if($image) : ?> <a href="<?php the_permalink(); ?>"><p class="pr_img_cen"><img src="<?php echo $image ?>"/></p></a> <?php endif; ?>
 				</div>
 				
 				<div class="prod-info">

@@ -68,7 +68,7 @@ h2.site-description{
 	width: 1000px;
 	border-radius: 5px 5px 0px 0px;
 	border-top: 1px solid #0597e1;
-	height: 59px;
+	/*height: 59px;*/
 	}
 	
 #submenu ul {
@@ -406,7 +406,7 @@ ul.slides{
 
 img.pshot{
 	display: block;
-	margin: 30px 30px;
+	margin: 30px auto;
 }
 
 /* Cart66 overrides */

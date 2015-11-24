@@ -425,6 +425,7 @@ a:active {
 img[class*="align"],
 img[class*="wp-image-"] {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+    padding-top: 8px;
 }
 .site-header img,
 .entry-content img,
@@ -500,4 +501,17 @@ object {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+.prod-title h2 {
+    min-height: 100px;
+}
+
+.pr_img_cen img {
+    border: 0 none;
+    max-height: 195px;
+}
+
+.pr_img_cen {
+    text-align: center;
+    margin-bottom: 0;
 }

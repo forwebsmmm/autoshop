@@ -37,7 +37,7 @@ get_header(); ?>
 						</div>
 						
 						<div class="slide-link"> 
-							<a href="<?php the_permalink(); ?>">View</a>
+							<a href="<?php the_permalink(); ?>">Подробнее</a>
 						</div>
 					</div>
 					
@@ -62,7 +62,7 @@ get_header(); ?>
 </div>
 <div class="clear"></div>
 
-<div class="section-head grid_12"> <h3>Latest Products </h3></div>
+<div class="section-head grid_12"> <h3>Последние товары </h3></div>
 <div class="clear"></div>
 
 <div class="product-shelf cf">
@@ -100,7 +100,7 @@ get_header(); ?>
 					</div>
 							
 					<div class="prod-footer">
-						<a class="vmore" href="<?php the_permalink(); ?>">View more</a>
+						<a class="vmore" href="<?php the_permalink(); ?>">Подробнее</a>
 						
 					</div>
 				</div>

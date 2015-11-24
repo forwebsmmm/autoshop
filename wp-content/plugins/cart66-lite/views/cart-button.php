@@ -63,7 +63,7 @@
       ?>
       <span class="Cart66Price<?php echo $isNumeric ? $css : ' Cart66PriceDescription'; ?>">
         <?php if($isNumeric): ?>
-          <span class="Cart66PriceLabel"><?php _e( 'Price' , 'cart66' ); ?>: </span>
+          <span class="Cart66PriceLabel"><?php _e( 'Цена' , 'cart66' ); ?>: </span>
           <?php echo Cart66Common::currency($priceString, true, true); ?>
         <?php else: ?>
           <?php echo $priceString; ?>
@@ -89,7 +89,7 @@
         
     ?>
       <span class="Cart66UserQuantity">
-       <label for="Cart66UserQuantityInput_<?php echo $id; ?>"><?php echo (Cart66Setting::getValue('userQuantityLabel')) ? Cart66Setting::getValue('userQuantityLabel') : __( 'Quantity: ' ) ?> </label>
+       <label for="Cart66UserQuantityInput_<?php echo $id; ?>"><?php echo (Cart66Setting::getValue('userQuantityLabel')) ? Cart66Setting::getValue('userQuantityLabel') : __( 'Количество: ' ) ?> </label>
        <input id="Cart66UserQuantityInput_<?php echo $id; ?>" name="item_quantity" value="<?php echo $defaultQuantity; ?>" size="4">
       </span> 
     <?php elseif(is_numeric($data['quantity']) && $data['is_user_price'] != 1): ?>

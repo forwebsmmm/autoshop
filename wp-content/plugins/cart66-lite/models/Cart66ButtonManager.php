@@ -16,7 +16,7 @@ class Cart66ButtonManager {
       
       $ajax = (isset($attrs['ajax'])) ? $attrs['ajax'] : 'no';
       
-      $buttonText = (isset($attrs['text'])) ? $attrs['text'] : __('Add to Cart', 'cart66');
+      $buttonText = (isset($attrs['text'])) ? $attrs['text'] : __('Добавить в корзину', 'cart66');
       
       $showName = isset($attrs['show_name']) ? strtolower($attrs['show_name']) : '';
       

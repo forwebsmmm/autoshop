@@ -62,8 +62,8 @@
 		</div>
 		
 		<div class="contact-info">
-			<span class="smail">Mail us:  <?php echo ft_of_get_option('fabthemes_mail'); ?> </span>
-			<span class="sphone">Call Us: <?php echo ft_of_get_option('fabthemes_phone'); ?></span>
+			<span class="smail">E-mail:  <?php echo ft_of_get_option('fabthemes_mail'); ?> </span>
+			<span class="sphone">Телефон: <?php echo ft_of_get_option('fabthemes_phone'); ?></span>
 		</div>
 	</header><!-- #masthead .site-header -->
 	
@@ -74,12 +74,12 @@
 	</div>
 	
 	<div class="sub_nav">
-		<div class="mycart"><?php echo do_shortcode('[shopping_cart empty_msg="Your shopping cart is empty"]'); ?></div>
+		<div class="mycart"><?php echo do_shortcode('[shopping_cart empty_msg="Ваша корзина пуста"]'); ?></div>
 		<div class="sbox">
 			<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 			    <div>
-			        <input type="text" value="Search products" name="s" id="s" />
-			        <input type="submit" id="searchsubmit" value="Search" />
+			        <input type="text" value="Найти запчасти" name="s" id="s" />
+			        <input type="submit" id="searchsubmit" value="Поиск" />
 			        <input type="hidden" name="post_type" value="products" />
 			    </div>
 			</form>

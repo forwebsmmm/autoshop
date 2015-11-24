@@ -17,13 +17,13 @@ class Cart66ShortcodeManager {
       <div id="Cart66scCartContents">
         <a id="Cart66scCartLink" href='<?php echo get_permalink($cartPage->ID) ?>'>
         <span id="Cart66scCartCount"><?php echo $cart->countItems(); ?></span>
-        <span id="Cart66scCartCountText"><?php echo $cart->countItems() > 1 ? ' items' : ' item' ?></span> 
+        <span id="Cart66scCartCountText"><?php echo $cart->countItems() > 1 ? ' товаров' : ' товар' ?></span>
         <span id="Cart66scCartCountDash">&ndash;</span>
         <span id="Cart66scCartPrice"><?php echo Cart66Common::currency($cart->getSubTotal()); ?>
         </span></a>
-        <a id="Cart66scViewCart" href='<?php echo get_permalink($cartPage->ID) ?>'>View Cart</a>
-        <span id="Cart66scLinkSeparator"> | </span>
-        <a id="Cart66scCheckout" href='<?php echo $checkoutUrl; ?>'>Check out</a>
+        <a id="Cart66scViewCart" href='<?php echo get_permalink($cartPage->ID) ?>'>Просмотреть корзину</a>
+<!--        <span id="Cart66scLinkSeparator"> | </span>-->
+<!--        <a id="Cart66scCheckout" href='--><?php //echo $checkoutUrl; ?><!--'>Check out</a>-->
       </div>
       <?php
     }

@@ -151,10 +151,10 @@ if($cartImgPath) {
     </colgroup>
   <thead>
     <tr>
-      <th><?php _e('Product','cart66') ?></th>
-      <th class="cart66-align-center"><?php _e( 'Quantity' , 'cart66' ); ?></th>
-      <th class="cart66-align-right"><?php _e( 'Item Price' , 'cart66' ); ?></th>
-      <th class="cart66-align-right"><?php _e( 'Item Total' , 'cart66' ); ?></th>
+      <th><?php _e('Товар','cart66') ?></th>
+      <th class="cart66-align-center"><?php _e( 'Количество' , 'cart66' ); ?></th>
+      <th class="cart66-align-right"><?php _e( 'Цена' , 'cart66' ); ?></th>
+      <th class="cart66-align-right"><?php _e( 'Общая цена' , 'cart66' ); ?></th>
     </tr>
   </thead>
   <tbody>
@@ -361,14 +361,14 @@ if($cartImgPath) {
         <?php if($cartImgPath && Cart66Common::urlIsLIve($updateTotalImg)): ?>
           <input class="Cart66UpdateTotalButton" type="image" src="<?php echo $updateTotalImg ?>" value="<?php _e( 'Update Total' , 'cart66' ); ?>" name="updateCart"/>
         <?php else: ?>
-          <input type="submit" name="updateCart" value="<?php _e( 'Update Total' , 'cart66' ); ?>" class="Cart66UpdateTotalButton Cart66ButtonSecondary" />
+          <input type="submit" name="updateCart" value="<?php _e( 'Пересчитать сумму' , 'cart66' ); ?>" class="Cart66UpdateTotalButton Cart66ButtonSecondary" />
         <?php endif; ?>
       </td>
       <?php else: ?>
         <td colspan="2">&nbsp;</td>
       <?php endif; ?>
-      <td class="alignRight strong"><?php _e( 'Subtotal' , 'cart66' ); ?>:</td>
-      <td class="strong cart66-align-right"><?php echo Cart66Common::currency($subtotal); ?></td>
+<!--      <td class="alignRight strong">--><?php //_e( 'Subtotal' , 'cart66' ); ?><!--:</td>-->
+<!--      <td class="strong cart66-align-right">--><?php //echo Cart66Common::currency($subtotal); ?><!--</td>-->
     </tr>
     
     <?php if(Cart66Session::get('Cart66Cart')->requireShipping()): ?>
@@ -428,7 +428,7 @@ if($cartImgPath) {
         <?php else: ?>
           <td colspan="2">&nbsp;</td>
         <?php endif; ?>
-        <td class="alignRight strong Cart66CartTotalLabel"><span class="ajax-spin"><img src="<?php echo CART66_URL; ?>/images/ajax-spin.gif" /></span> <?php _e( 'Total' , 'cart66' ); ?>:</td>
+        <td class="alignRight strong Cart66CartTotalLabel"><span class="ajax-spin"><img src="<?php echo CART66_URL; ?>/images/ajax-spin.gif" /></span> <?php _e( 'Сумма' , 'cart66' ); ?>:</td>
         <td class="strong grand-total-amount cart66-align-right">
           <?php 
             echo Cart66Common::currency(Cart66Session::get('Cart66Cart')->getGrandTotal() + $tax);
@@ -446,7 +446,7 @@ if($cartImgPath) {
         <?php if($cartImgPath): ?>
           <a href="<?php echo Cart66Session::get('Cart66LastPage'); ?>" class="Cart66CartContinueShopping" ><img src="<?php echo $continueShoppingImg ?>" /></a>
         <?php else: ?>
-          <a href="<?php echo Cart66Session::get('Cart66LastPage'); ?>" class="Cart66ButtonSecondary Cart66CartContinueShopping" title="Continue Shopping"><?php _e( 'Continue Shopping' , 'cart66' ); ?></a>
+          <a href="<?php echo Cart66Session::get('Cart66LastPage'); ?>" class="Cart66ButtonSecondary Cart66CartContinueShopping" title="Continue Shopping"><?php _e( 'Продолжить покупки' , 'cart66' ); ?></a>
         <?php endif; ?>
 	</div>
 
@@ -470,16 +470,16 @@ if($cartImgPath) {
         <?php
         if(number_format(Cart66Setting::getValue('minimum_amount'), 2, '.', '') > number_format(Cart66Session::get('Cart66Cart')->getSubTotal(), 2, '.', '') && Cart66Setting::getValue('minimum_cart_amount') == 1): ?>
         <?php else: ?>
-      <div id="checkoutShopping">
-        <?php
-        $checkoutUrl = Cart66Setting::getValue('auth_force_ssl') ? str_replace('http://', 'https://', get_permalink($checkoutPage->ID)) : get_permalink($checkoutPage->ID);
-        ?>
-        <?php if($checkoutImg): ?>
-          <a id="Cart66CheckoutButton" href="<?php echo $checkoutUrl; ?>"><img src="<?php echo $checkoutImg ?>" /></a>
-        <?php else: ?>
-          <a id="Cart66CheckoutButton" href="<?php echo $checkoutUrl; ?>" class="Cart66ButtonPrimary" title="Continue to Checkout"><?php _e( 'Checkout' , 'cart66' ); ?></a>
-        <?php endif; ?>
-    	</div>
+<!--      <div id="checkoutShopping">-->
+<!--        --><?php
+//        $checkoutUrl = Cart66Setting::getValue('auth_force_ssl') ? str_replace('http://', 'https://', get_permalink($checkoutPage->ID)) : get_permalink($checkoutPage->ID);
+//        ?>
+<!--        --><?php //if($checkoutImg): ?>
+<!--          <a id="Cart66CheckoutButton" href="--><?php //echo $checkoutUrl; ?><!--"><img src="--><?php //echo $checkoutImg ?><!--" /></a>-->
+<!--        --><?php //else: ?>
+<!--          <a id="Cart66CheckoutButton" href="--><?php //echo $checkoutUrl; ?><!--" class="Cart66ButtonPrimary" title="Continue to Checkout">--><?php //_e( 'Checkout' , 'cart66' ); ?><!--</a>-->
+<!--        --><?php //endif; ?>
+<!--    	</div>-->
     	<?php endif; ?>
     <?php else: ?>
     <div id="Cart66CheckoutReplacementText">

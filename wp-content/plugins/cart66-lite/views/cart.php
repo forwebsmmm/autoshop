@@ -502,11 +502,11 @@ if($cartImgPath) {
   <?php endif; ?>
 <?php else: ?>
   <div id="emptyCartMsg">
-  <h3><?php _e('Your Cart Is Empty','cart66'); ?></h3>
+  <h3><?php _e('Ваша корзина пуста','cart66'); ?></h3>
   <?php if($cartImgPath): ?>
     <a href="<?php echo Cart66Session::get('Cart66LastPage'); ?>" title="Continue Shopping" class="Cart66CartContinueShopping"><img alt="Continue Shopping" class="continueShoppingImg" src="<?php echo $continueShoppingImg ?>" /></a>
   <?php else: ?>
-    <a href="<?php echo Cart66Session::get('Cart66LastPage'); ?>" class="Cart66ButtonSecondary" title="Continue Shopping"><?php _e( 'Continue Shopping' , 'cart66' ); ?></a>
+    <a href="<?php echo Cart66Session::get('Cart66LastPage'); ?>" class="Cart66ButtonSecondary" title="Continue Shopping"><?php _e( 'Продолжить покупки' , 'cart66' ); ?></a>
   <?php endif; ?>
   </div>
   <?php

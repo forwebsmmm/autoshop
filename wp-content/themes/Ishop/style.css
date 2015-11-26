@@ -545,3 +545,7 @@ tr.subtotal {
 p.ostatok {
     margin-bottom: 0;
 }
+
+a.sf-with-ul strong {
+    cursor: pointer;
+}

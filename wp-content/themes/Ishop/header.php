@@ -46,6 +46,8 @@
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/auto.js" type="text/javascript"></script>
 
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/autoicon.png" type="image/png">
+
 </head>
 
 <body <?php body_class(); ?>>

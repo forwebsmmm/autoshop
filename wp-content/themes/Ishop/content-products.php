@@ -26,6 +26,8 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+        <?php $ostatok = get_post_meta( $post->ID, '_product_info_product_ostatok'); ?>
+        <p class="ostatok">Осталось: <?php echo $ostatok[0] ? $ostatok[0] : 0;?> шт.</p>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fabthemes' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'fabthemes' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->

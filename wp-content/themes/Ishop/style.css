@@ -515,3 +515,33 @@ object {
     text-align: center;
     margin-bottom: 0;
 }
+
+#table1 tr{
+    margin-top: 10px;
+}
+
+#zakaz .first h3 {
+    text-align: center;
+}
+
+.Cart66ButtonSecondary.zakazsubmit {
+    background: #39c408 none repeat scroll 0 0 !important;
+    float: right;
+}
+
+input:invalid {
+    box-shadow: none;
+}
+
+.error_message {
+    margin-bottom: 0;
+    color: red;
+}
+
+tr.subtotal {
+    display: none;
+}
+
+p.ostatok {
+    margin-bottom: 0;
+}

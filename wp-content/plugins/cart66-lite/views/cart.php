@@ -361,7 +361,7 @@ if($cartImgPath) {
         <?php if($cartImgPath && Cart66Common::urlIsLIve($updateTotalImg)): ?>
           <input class="Cart66UpdateTotalButton" type="image" src="<?php echo $updateTotalImg ?>" value="<?php _e( 'Update Total' , 'cart66' ); ?>" name="updateCart"/>
         <?php else: ?>
-          <input type="submit" name="updateCart" value="<?php _e( 'Пересчитать сумму' , 'cart66' ); ?>" class="Cart66UpdateTotalButton Cart66ButtonSecondary" />
+          <input id="UpdateSumma" type="submit" name="updateCart" value="<?php _e( 'Пересчитать сумму' , 'cart66' ); ?>" class="Cart66UpdateTotalButton Cart66ButtonSecondary" />
         <?php endif; ?>
       </td>
       <?php else: ?>
@@ -497,8 +497,66 @@ if($cartImgPath) {
     	 ?>
 	
 	</div>
-	
-	
+
+    <form id="zakaz" action="" method="post" name="zakaz">
+        <div class="first">
+            <h3>Введите данные для заказа:</h3>
+            <table class="formzakaz" id="table1">
+                <tbody>
+                <tr>
+                    <td class="fam">Фамилия: </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="require-field" type="text" required="" value="" name="name1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Имя:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="require-field" type="text" required="" value="" name="name2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Отчество:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="require-field" type="text" required="" value="" name="name3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="require-field email" type="text" required="" value="" name="email" id="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Тел. моб.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="require-field" type="text" required="" value="" name="telephone" id="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Город:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="require-field" type="text" required="" value="" name="city">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <input class="Cart66ButtonSecondary zakazsubmit" type="submit" value="Заказать" name="submit">
+    </form>
+	<?php include(get_template_directory().'/mail.php'); ?>
   <?php endif; ?>
 <?php else: ?>
   <div id="emptyCartMsg">
@@ -516,4 +574,5 @@ if($cartImgPath) {
     Cart66Session::drop("terms_acceptance");
   ?>
 <?php endif; ?>
+
 

@@ -279,7 +279,7 @@ function parser_page(){
                 $product_price = strtr($product_price, array(','=>''));
                 $product_price = round($product_price);
                 $product_ostatok = round($product_ostatok);
-                $wpdb->update(
+                $result = $wpdb->update(
                     'wp_cart66_products',
                     array( 'price' => $product_price ),
                     array( 'item_number' => $number_unq)
@@ -306,13 +306,12 @@ function parser_page(){
 //                update_post_meta($post_id, '_thumbnail_id', 39);
 //                update_post_meta($post_id, '_product_info_product_price', '0руб.');
 
-//                $result = $wpdb->update( 'wp_cart66_products', array('nalichie' => '0'), array('name'=>$nalichie) );
-//                if ($result == 1){
-//                    $xlsresult = 1;
-//                }
+                if ($result == 1){
+                    $xlsresult = 1;
+                }
             }
             unlink($attachment);
-//            echo $xlsresult == 1 ? "Изменения внесены" : "Изменений нет, проверьте xls файл или повторите попытку.";
+            echo $xlsresult == 1 ? "Изменения внесены" : "Изменений нет, проверьте xls файл или повторите попытку.";
         } else {
             echo "Формат файла не xls и не xlsx";
         }

@@ -17,7 +17,7 @@ if ($_POST['submit']){
     if (!empty($surname) && is_email($email)) {
         $body = "<table style='border: 1px solid rgb(240,240,240);'>";
         $mail_subject = "MB-Auto 161";
-        $to = "forwebsmmm@gmail.com, ".$email;
+        $to = "MB-Auto161@yandex.ru, ".$email;
         $mail_headers="content-type:text/html; charset=UTF-8";
         $i=1;
 

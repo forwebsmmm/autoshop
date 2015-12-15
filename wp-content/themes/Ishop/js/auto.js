@@ -104,4 +104,17 @@ jQuery(document).ready(function($){
             }
         })
     }
+
+    $(function() {
+        $('.jcarousel')
+            .jcarousel({
+                // Core configuration goes here
+            })
+            .jcarouselAutoscroll({
+                interval: 5000,
+                target: '+=1',
+                autostart: true
+            })
+        ;
+    });
 });

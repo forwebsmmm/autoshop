@@ -77,7 +77,8 @@ get_header(); ?>
             $paged = get_query_var('page');
         else
             $paged = 1;
-        $wp_query = new WP_Query(array('post_type' => 'products', 'paged' => $paged, 'category_name' => 'ssangyong' ));
+        $pagename = wp_title('', false);
+        $wp_query = new WP_Query(array('post_type' => 'products', 'paged' => $paged, 'category_name' => $pagename));
         ?>
         <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 

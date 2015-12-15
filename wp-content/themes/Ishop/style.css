@@ -549,3 +549,27 @@ p.ostatok {
 a.sf-with-ul strong {
     cursor: pointer;
 }
+
+.category_home {
+    margin-right: 3.9px;
+}
+
+a.category_home:nth-child(4n+1)  {
+    margin-right: 0;
+}
+
+.category_home div {
+    display: inline-block;
+}
+
+.category_home div p {
+    background-color: #20a2e4;
+    margin-top: -5px;
+    padding: 5px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.category_home:hover div p {
+    background-color: #0268af;
+}

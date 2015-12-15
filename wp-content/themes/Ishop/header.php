@@ -37,6 +37,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+<link href='<?php echo get_template_directory_uri(); ?>/css/jcarousel.data-attributes.css' rel='stylesheet' type='text/css'>
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -44,6 +45,7 @@
 
 <?php wp_head(); ?>
 
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.jcarousel.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/auto.js" type="text/javascript"></script>
 
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/autoicon.png" type="image/png">

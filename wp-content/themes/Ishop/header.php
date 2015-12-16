@@ -85,7 +85,7 @@
 		<div class="sbox">
 			<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 			    <div>
-			        <input type="text" value="Найти запчасти" name="s" id="s" />
+			        <input type="text" value="Найти запчасти" onfocus="if (this.value == 'Найти запчасти') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Найти запчасти';}" name="s" id="s" />
 			        <input type="submit" id="searchsubmit" value="Поиск" />
 			        <input type="hidden" name="post_type" value="products" />
 			    </div>
